@@ -12,22 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Lab1_BirthDateWindow.ViewModels;
 
 namespace Lab1_BirthDateWindow.Views
 {
     /// <summary>
-    /// Interaction logic for BirthDateControl.xaml
+    /// Interaction logic for BirthDateView.xaml
     /// </summary>
-    public partial class BirthDateControl : UserControl
+    public partial class BirthDateView : UserControl
     {
-        public BirthDateControl()
+        private BirthDateViewModel _viewModel;
+        public BirthDateView()
         {
             InitializeComponent();
-        }
-
-        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            ((Label)sender).Visibility = Visibility.Collapsed;
+            DataContext = _viewModel = new BirthDateViewModel();
         }
     }
 }
